@@ -19,7 +19,7 @@ What is CoreData? CoreData is like a storage for iOS/macOS applications that hel
 ```swift
 let context = (UIApplication.shared.delegate as! AppDelage).persistetContainer.viewContext
 
-func fetchPerson() {
+func fetchPeople() {
     do {
         self.items = try context.fetch(Person.fetchRequest())
 
@@ -30,6 +30,54 @@ func fetchPerson() {
 
     }
 }
+```
+
+**To create object**
+```swift
+let newPerson = Person(context: self.context)
+newPerson.name = texfield.text
+```
+
+**To save object**
+```swift
+do {
+    try self.context.save()
+} catch {
+
+}
+```
+
+**To fetch(refresh) data**
+```swift
+self.fetchPeople()
+```
+
+**To delete data**
+```swift
+let personToRemove = self.items![indexPath.row]
+
+self.context.delete(personToRemove) <<== this row
+
+do {
+    try self.context.save()
+} catch {
+
+}
+self.fetchPeople()
+```
+
+**To edit data**
+```swift
+let person = self.items![indexPath.row]
+
+person.name = textfield.text <<== this row
+
+do {
+    try self.context.save()
+} catch {
+
+}
+self.fetchPeople()
 ```
 
 **Codegen** in xcdatamodeId
