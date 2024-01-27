@@ -9,3 +9,20 @@ func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRow
   return UISwipeActionsConfiguration(action: [action])
 }
 ```
+
+**Make some action after swipe tableview**
+```swift
+func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+  return UISwipeActionsConfiguration(actions: [makeCompleteContextualAction(forRowAt: indexPath)])
+}
+
+private func makeCompleteContextualAction(forRowAt indexPath: IndexPath) -> UIContextualAction {
+  return UIContextualAction(style: .normal, title: "Complete") { (action, swipeButtonView, completion) in
+    action.image = ProjectImages.Annotation.checkmark
+    action.image?.withTintColor(.systemGreen)
+    action.backgroundColor = .systemOrange
+    print("COMPLETE HERE")
+    completion(true)
+  }
+}
+```
