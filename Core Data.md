@@ -107,6 +107,25 @@ func fetchPeople() {
 }
 ```
 
+**With multiply Entities**
+Create **Person** and **Family** Entities. In Family we create relationship with Person entity
+- **destination** Person
+- **inverse** family
+- Type **To Many**
+```swift
+func relationships() {
+    let family = Family(context: context)
+    family.name = "Ukraine"
+
+    let person = Person(context: context)
+    person.name = "Ua"
+
+    family.addPerson(person) || person.family = "Ukraine"
+
+    try! context.save() || with do-try-catch
+}
+```
+
 **Codegen** in xcdatamodeId
 - Manual/None -> We need to manually create and update our [**Model+CoreDataClass**] and [**Model+CoreDataProperties**] so later we can modify those files as we want
 - Class Definition -> XCode will generate [**Model+CoreDataClass**] and [**Model+CoreDataProperties**] automaticaly, but we can't see and modify those files
