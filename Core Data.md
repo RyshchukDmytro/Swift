@@ -1,4 +1,4 @@
-What is CoreData?
+What is CoreData? CoreData is like a storage for iOS/macOS applications that helps to store information.
 
 1)
 2)
@@ -12,12 +12,8 @@ What is CoreData?
 - Class Definition -> XCode will generate [**Model+CoreDataClass**] and [**Model+CoreDataProperties**] automaticaly, but we can't see and modify those files
 - Category/Extension -> We need to create only [**Model+CoreDataClass**] so we can modify it later
 
-CoreData is like a storage for iOS/macOS applications that helps to store information.
 
-**Places where to learn:**
-- Kodeco
-- YouTube
-- Books
+
 
 ```swift
 static func addCoreData(name: String, image: URL) {
