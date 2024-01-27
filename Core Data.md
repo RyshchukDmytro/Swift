@@ -6,9 +6,13 @@ What is CoreData? CoreData is like a storage for iOS/macOS applications that hel
 4) Core Data Persistent Container -> Place where data is saved and can be readed.
 
 In AppDelegate file we have **lazy var persistentContainer: NSPersistentContainer = { ...** that give us access to [**CoreData**]
+
 In AppDelegate file we have **func saveContext() {...** that check if there any updates in [**CoreData**] and save them
+
 **NSManagedObject** class we need to transfer data to and from [Core Data Persistent Container] in understandable format (ex. Person to binary and vice versa)
+
 **(UIApplication.shared.delegate as! AppDelage).persistetContainer** -> Give us access to [**Core Data Persistent Container**], but we need to do next step to get real access to [**CoreData**]
+
 **(UIApplication.shared.delegate as! AppDelage).persistetContainer.viewContext** -> Give us access to [**NSManagedObject** ] and now we can interact with [**Core Data Persistent Container**]
 
 **Codegen** in xcdatamodeId
