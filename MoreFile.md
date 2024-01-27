@@ -7,7 +7,7 @@ CoreData is like a storage for iOS/macOS applications that helps to store inform
 - YouTube
 - Books
 
-```
+```swift
 static func addCoreData(name: String, image: URL) {
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     let newData = MyData(context: context)
@@ -20,3 +20,4 @@ static func addCoreData(name: String, image: URL) {
     }
 }
 ```
+
