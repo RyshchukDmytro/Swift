@@ -80,6 +80,33 @@ do {
 self.fetchPeople()
 ```
 
+**To filter and sort CoreData**
+```swift
+let context = (UIApplication.shared.delegate as! AppDelage).persistetContainer.viewContext
+
+func fetchPeople() {
+    do {
+        let request = Person.fetchRequest() as NSFetchRequest<Person>
+
+        // Set the filtering
+        let pred = NSPredicate(format: "name CONTAINS 'Dmytro'") || let pred = NSPredicate(format: "name CONTAINS %@", "Dmytro")
+        request.predicate = pred
+
+        // Set sorting on the request
+        let sort = NSSortDescriptor(key: "name", ascending: true)
+        request.sortDescriptor = [sort] <<== it's array so we can sort with multiply sort conditions (ex. by name and surname)
+
+        self.items = try context.fetch(request)
+
+        Dispatch.main.async {
+            self.tableView.reloadData()
+        }
+    } catch {
+
+    }
+}
+```
+
 **Codegen** in xcdatamodeId
 - Manual/None -> We need to manually create and update our [**Model+CoreDataClass**] and [**Model+CoreDataProperties**] so later we can modify those files as we want
 - Class Definition -> XCode will generate [**Model+CoreDataClass**] and [**Model+CoreDataProperties**] automaticaly, but we can't see and modify those files
