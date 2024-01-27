@@ -1,5 +1,10 @@
 What is CoreData?
 
+1)
+2)
+3) Managed Object Context -> Transfer data from [2] to [Core Data Persistent Container]
+4) Core Data Persistent Container -> Place where data is saved and can be readed.
+
 CoreData is like a storage for iOS/macOS applications that helps to store information.
 
 **Places where to learn:**
