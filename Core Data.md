@@ -111,7 +111,7 @@ func fetchPeople() {
 Create **Person** and **Family** Entities. In Family we create relationship with Person entity
 - **destination** Person
 - **inverse** family
-- Type **To Many**
+- **Type** To Many
 ```swift
 func relationships() {
     let family = Family(context: context)
