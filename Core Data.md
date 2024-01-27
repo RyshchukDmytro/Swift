@@ -7,6 +7,11 @@ What is CoreData?
 
 **NSManagedOpject** class we need to transfer data to and from [Core Data Persistent Container] in understandable format (ex. Person to binary and vice versa)
 
+**Codegen** in xcdatamodeId
+- Manual/None -> We need to manually create and update our [**Model+CoreDataClass**] and [**Model+CoreDataProperties**] so later we can modify those files as we want
+- Class Definition -> XCode will generate [**Model+CoreDataClass**] and [**Model+CoreDataProperties**] automaticaly, but we can't see and modify those files
+- Category/Extension -> We need to create only [**Model+CoreDataClass**] so we can modify it later
+
 CoreData is like a storage for iOS/macOS applications that helps to store information.
 
 **Places where to learn:**
