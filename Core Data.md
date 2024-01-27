@@ -1,4 +1,4 @@
-What is CoreData? CoreData is like a storage for iOS/macOS applications that helps to store information.
+# CoreData
 
 1)
 2)
