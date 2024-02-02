@@ -94,7 +94,7 @@ func fetchPeople() {
 
         // Set sorting on the request
         let sort = NSSortDescriptor(key: "name", ascending: true)
-        request.sortDescriptor = [sort] <<== it's array so we can sort with multiply sort conditions (ex. by name and surname)
+        request.sortDescriptors = [sort] <<== it's array so we can sort with multiply sort conditions (ex. by name and surname)
 
         self.items = try context.fetch(request)
 
