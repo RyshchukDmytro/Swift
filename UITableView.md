@@ -6,7 +6,7 @@ func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRow
   let action = UIContextualAction(style: .destructive, title: "Delete") { (action, view, completionHandler) in
     ... = <<  delete action here, usually from database
   }
-  return UISwipeActionsConfiguration(action: [action])
+  return UISwipeActionsConfiguration(actions: [action])
 }
 ```
 
