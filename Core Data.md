@@ -11,19 +11,19 @@
 
 - **NSManagedObject** class we need to transfer data to and from [Core Data Persistent Container] in understandable format (ex. Person to binary and vice versa)
 
-- **(UIApplication.shared.delegate as! AppDelegate).persistetContainer** -> Give us access to [**Core Data Persistent Container**], but we need to do next step to get real access to [**CoreData**]
+- **(UIApplication.shared.delegate as! AppDelegate).persistentContainer** -> Give us access to [**Core Data Persistent Container**], but we need to do next step to get real access to [**CoreData**]
 
-- **(UIApplication.shared.delegate as! AppDelegate).persistetContainer.viewContext** -> Give us access to [**NSManagedObject** ] and now we can interact with [**Core Data Persistent Container**]
+- **(UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext** -> Give us access to [**NSManagedObject** ] and now we can interact with [**Core Data Persistent Container**]
 
 **To fetch data from CoreData**
 ```swift
-let context = (UIApplication.shared.delegate as! AppDelegate).persistetContainer.viewContext
+let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
 
 func fetchPeople() {
     do {
         self.items = try context.fetch(Person.fetchRequest())
 
-        Dispatch.main.async {
+        DispatchQueue.main.async {
             self.tableView.reloadData()
         }
     } catch {
@@ -82,7 +82,7 @@ self.fetchPeople()
 
 **To filter and sort CoreData**
 ```swift
-let context = (UIApplication.shared.delegate as! AppDelegate).persistetContainer.viewContext
+let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
 
 func fetchPeople() {
     do {
@@ -98,7 +98,7 @@ func fetchPeople() {
 
         self.items = try context.fetch(request)
 
-        Dispatch.main.async {
+        DispatchQueue.main.async {
             self.tableView.reloadData()
         }
     } catch {
