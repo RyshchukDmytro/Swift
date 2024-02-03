@@ -1,7 +1,10 @@
 # What lefts
 
-Cureent:
-Transformable, migration, optimization(fastest performance), links between 2 models
+Current in CoreData:
+- Transformable
+- migration
+- optimization(faster performance)
+- relationships between 2 models
 
 * MVVM/MVC/MVP
 * Network
